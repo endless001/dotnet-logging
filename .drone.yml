@@ -7,8 +7,3 @@ steps:
   image: docker/compose
   commands:
     - docker-compose -f docker-compose.yml up -d
-  volumes:
-    - name: dockersock
-      path: /var/run/docker.sock
-  depends_on:
-    - build
