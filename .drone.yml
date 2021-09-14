@@ -4,12 +4,10 @@ name: default
 
 steps:
 - name: build
-  image: docker/compose
+  image: mcr.microsoft.com/dotnet/sdk:5.0
   commands:
-    - docker-compose -f docker-compose.yml  build
-  volumes:
-    - name: docker_socket
-      path: /var/run/docker.sock
+    - dotnet build
+
 
 - name: publish
   image: plugins/docker
