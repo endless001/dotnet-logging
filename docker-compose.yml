@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  logging-api:
+    image: logging.api
+    build:
+      context: .
+      dockerfile: src/Logging.API/Dockerfile
+    ports:
+      - "5000:80"
+    logging:
+      driver: 'fluentd'
+      options:
+        fluentd-address: localhost:24224
+        tag: httpd.access

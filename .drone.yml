@@ -1,0 +1,13 @@
+kind: pipeline
+name: default
+
+steps:
+- name: build
+  image: docker/compose:1.25.0-rc2-alpine
+  commands:
+    - docker-compose -f docker-compose.yml up -d
+  volumes:
+    - name: dockersock
+      path: /var/run/docker.sock
+  depends_on:
+    - build
