@@ -12,18 +12,16 @@ steps:
   image: mcr.microsoft.com/dotnet/sdk:5.0
   commands:
     - dotnet test
-
-
+ 
 - name: publish
-  image: plugins/docker
-  settings:
-    username: 
-       from_secret: docker_username
-    password: 
-       from_secret: docker_password
-    repo: inendless.azurecr.io/zero/logging.api
-    tags: latest
-    registry: inendless.azurecr.io
+  image: docker/compose
+  commands:
+    - docker-compose -f docker-compose.yml build
+    - docker-compose -f docker-compose.yml push
+  volumes:
+    - name: dockersock
+      path: /var/run/docker.sock    
+
 
 volumes:
     - name: docker_socket

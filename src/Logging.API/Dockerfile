@@ -12,6 +12,7 @@ WORKDIR /src
 COPY "dotnet-logging.sln" "dotnet-logging.sln"
 
 COPY "src/Logging.API/Logging.API.csproj" "src/Logging.API/Logging.API.csproj"
+COPY "src/Logging.UnitTests/Logging.UnitTests.csproj" "src/Logging.UnitTests/Logging.UnitTests.csproj"
 COPY "NuGet.config" "NuGet.config"
 
 

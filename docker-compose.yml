@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   logging-api:
-    image: logging.api
+    image: inendless.azurecr.io/logging.api
     build:
       context: .
       dockerfile: src/Logging.API/Dockerfile

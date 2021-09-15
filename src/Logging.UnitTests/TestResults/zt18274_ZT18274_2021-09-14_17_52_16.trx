@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="386bddb6-daf6-4980-bb99-321323556ae0" name="zt18274@ZT18274 2021-09-14 17:52:16" runUser="ZONGTENG\zt18274" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2021-09-14T17:52:16.5979115+08:00" queuing="2021-09-14T17:52:16.5979143+08:00" start="2021-09-14T17:52:14.5240287+08:00" finish="2021-09-14T17:52:16.6046743+08:00" />
+  <TestSettings name="default" id="cd85330a-8420-40ca-bf44-b7569529a7fe">
+    <Deployment runDeploymentRoot="zt18274_ZT18274_2021-09-14_17_52_16" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="51e7f912-3de6-459c-b466-dd8a995ad638" testId="bf66491f-fdc0-a89b-88e2-532211fd94e5" testName="Logging.UnitTests.UnitTest1.Test1" computerName="ZT18274" duration="00:00:00.0046334" startTime="2021-09-14T17:52:16.4816388+08:00" endTime="2021-09-14T17:52:16.4817052+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="51e7f912-3de6-459c-b466-dd8a995ad638">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure&#xD;
+Expected: 5&#xD;
+Actual:   4</Message>
+          <StackTrace>   at Logging.UnitTests.UnitTest1.Test1() in E:\dotnet-logging\src\Logging.UnitTests\UnitTest1.cs:line 11</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Logging.UnitTests.UnitTest1.Test1" storage="e:\dotnet-logging\src\logging.unittests\bin\debug\net5.0\logging.unittests.dll" id="bf66491f-fdc0-a89b-88e2-532211fd94e5">
+      <Execution id="51e7f912-3de6-459c-b466-dd8a995ad638" />
+      <TestMethod codeBase="E:\dotnet-logging\src\Logging.UnitTests\bin\Debug\net5.0\Logging.UnitTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Logging.UnitTests.UnitTest1" name="Test1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="bf66491f-fdc0-a89b-88e2-532211fd94e5" executionId="51e7f912-3de6-459c-b466-dd8a995ad638" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="列表中未列出的结果" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="所有已加载的结果" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" passed="0" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.3+1b45f5407b (64-bit .NET 5.0.2)&#xD;
+[xUnit.net 00:00:00.32]   Discovering: Logging.UnitTests&#xD;
+[xUnit.net 00:00:00.35]   Discovered:  Logging.UnitTests&#xD;
+[xUnit.net 00:00:00.35]   Starting:    Logging.UnitTests&#xD;
+[xUnit.net 00:00:00.42]       Assert.Equal() Failure&#xD;
+[xUnit.net 00:00:00.42]       Expected: 5&#xD;
+[xUnit.net 00:00:00.42]       Actual:   4&#xD;
+[xUnit.net 00:00:00.42]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.42]         E:\dotnet-logging\src\Logging.UnitTests\UnitTest1.cs(11,0): at Logging.UnitTests.UnitTest1.Test1()&#xD;
+[xUnit.net 00:00:00.43]   Finished:    Logging.UnitTests&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="ZT18274" outcome="Error" timestamp="2021-09-14T17:52:16.4774729+08:00">
+        <Text>[xUnit.net 00:00:00.42]     Logging.UnitTests.UnitTest1.Test1 [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>
