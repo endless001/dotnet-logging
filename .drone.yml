@@ -22,7 +22,8 @@ steps:
       from_secret: docker_password
   commands:
     - docker-compose -f docker-compose.yml  build
-    - echo $DOCKER_USERNAME
+    - docker login  inendless.azurecr.io -u $DOCKER_USERNAME  -p $DOCKER_PASSWORD
+    - echo ${DOCKER_USERNAME}
     - echo ${DOCKER_PASSWORD}
   volumes:
     - name: docker_socket
