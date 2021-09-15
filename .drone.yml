@@ -22,7 +22,7 @@ steps:
   volumes:
     - name: docker_socket
       path: /var/run/docker.sock
-
+  secrets: [ docker_username, docker_password ]
 
 volumes:
     - name: docker_socket
