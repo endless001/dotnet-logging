@@ -18,9 +18,11 @@ steps:
   commands:
     - docker-compose -f docker-compose.yml  build
     - echo $DOCKER_USERNAME
-    - echo ${DOCKER_PASSWORD}
+    - echo ${DOCKER_USERNAME}
     - echo $${DOCKER_USERNAME}
-    - echo $${DOCKER_PASSWORD}
+    - echo $docker_username
+    - echo ${docker_username}
+    - echo $${docker_username}
     - docker-compose push
   secrets: [ docker_username, docker_password ]
   volumes:
