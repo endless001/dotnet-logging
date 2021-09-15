@@ -15,6 +15,11 @@ steps:
  
 - name: publish
   image: docker/compose
+  environment:
+    DOCKER_USERNAME:
+      from_secret: docker_username
+    PASSWORD:
+      from_secret: docker_password
   commands:
     - docker-compose -f docker-compose.yml  build
     - echo $DOCKER_USERNAME
