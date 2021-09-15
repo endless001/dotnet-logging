@@ -17,6 +17,7 @@ steps:
   image: docker/compose
   commands:
     - docker-compose -f docker-compose.yml  build
+    - docker-compose push
   volumes:
     - name: docker_socket
       path: /var/run/docker.sock
