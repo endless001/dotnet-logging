@@ -16,11 +16,11 @@ steps:
 - name: publish
   image: docker/compose
   commands:
-    - docker-compose -f docker-compose.yml build
-    - docker-compose -f docker-compose.yml push
+    - docker-compose -f docker-compose.yml  build
   volumes:
     - name: docker_socket
-      path: /var/run/docker.sock    
+      path: /var/run/docker.sock
+
 
 volumes:
     - name: docker_socket
