@@ -18,11 +18,15 @@ steps:
   commands:
     - docker-compose -f docker-compose.yml  build
     - echo ${DOCKER_USERNAME}
+    - echo ${DOCKER_PASSWORD}
+    - echo $${DOCKER_USERNAME}
+    - echo $${DOCKER_PASSWORD}
     - docker-compose push
+  secrets: [ docker_username, docker_password ]
   volumes:
     - name: docker_socket
       path: /var/run/docker.sock
-  secrets: [ docker_username, docker_password ]
+ 
 
 volumes:
     - name: docker_socket
