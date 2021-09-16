@@ -9,6 +9,7 @@ steps:
   settings:
     from: 15717151224@163.com
     host: smtp.163.com
+    port: 25
     username: 
        from_secret: email_username
     password: 
@@ -53,7 +54,6 @@ steps:
     script:
       - cd ~/deploy/dotnet-logging
       - sudo docker-compose up -d
- 
 
 volumes:
     - name: docker_socket
@@ -62,3 +62,5 @@ volumes:
 
 image_pull_secrets:
     - dockerconfigjson
+
+
