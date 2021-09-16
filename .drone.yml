@@ -36,10 +36,8 @@ steps:
     password: vagrant
     port: 22
     script:
-      - cd ~/deploy
-      - git fetch --all
-      - git reset --hard origin/main
-      - git pull origin main
+      - cd ~/deploy/dotnet-logging
+      - sudo docker-compose up -d
  
 
 volumes:
