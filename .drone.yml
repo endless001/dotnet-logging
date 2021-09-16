@@ -27,6 +27,19 @@ steps:
   volumes:
     - name: docker_socket
       path: /var/run/docker.sock
+
+- name: deploy
+  image: appleboy/drone-ssh
+  settings:
+    host: 172.27.219.233
+    username: vagrant
+    password: vagrant
+    port: 22
+    script:
+      - cd ~/deploy
+      - git fetch --all
+      - git reset --hard origin/main
+      - git pull origin main
  
 
 volumes:

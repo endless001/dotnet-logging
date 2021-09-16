@@ -47,8 +47,8 @@ namespace Logging.API
                    });
         private static (int httpPort, int grpcPort) GetDefinedPorts(IConfiguration config)
         {
-            var grpcPort = config.GetValue("GRPC_PORT", 5001);
-            var port = config.GetValue("PORT", 5000);
+            var grpcPort = config.GetValue("GRPC_PORT", 433);
+            var port = config.GetValue("PORT", 80);
             return (port, grpcPort);
         }
 
