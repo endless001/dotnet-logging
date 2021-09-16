@@ -2,8 +2,8 @@ kind: pipeline
 type: docker
 name: default
 
-steps:
 
+steps:
 - name: notify
   image: drillster/drone-email
   settings:
@@ -12,13 +12,9 @@ steps:
     username: 
        from_secret: email_username
     password: 
-       from_secret: email_password
-    subject: >
-        [{{ build.status }}]
-        {{ repo.owner }}/{{ repo.name }}
-        ({{ build.branch }} - {{ truncate build.commit 8 }})
-    body:
-       https://git.io/vgvPz
+       from_secret: email_password 
+    when:
+      status: [ success, failure ]
     recipients:
         - 1319822160@qq.com
 
