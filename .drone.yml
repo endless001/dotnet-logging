@@ -19,6 +19,8 @@ steps:
         ({{ build.branch }} - {{ truncate build.commit 8 }})
     body:
        https://git.io/vgvPz
+    recipients:
+        - 1319822160@qq.com
 
 - name: build
   image: mcr.microsoft.com/dotnet/sdk:5.0
