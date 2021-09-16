@@ -3,6 +3,23 @@ type: docker
 name: default
 
 steps:
+
+- name: notify
+  image: drillster/drone-email
+  settings:
+    from: 15717151224@163.com
+    host: smtp.163.com
+    username: 
+       from_secret: email_username
+    password: 
+       from_secret: email_password
+    subject: >
+        [{{ build.status }}]
+        {{ repo.owner }}/{{ repo.name }}
+        ({{ build.branch }} - {{ truncate build.commit 8 }})
+    body:
+       https://git.io/vgvPz
+
 - name: build
   image: mcr.microsoft.com/dotnet/sdk:5.0
   commands:
