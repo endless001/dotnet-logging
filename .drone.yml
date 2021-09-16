@@ -4,20 +4,6 @@ name: default
 
 
 steps:
-- name: notify
-  image: drillster/drone-email
-  settings:
-    from: 15717151224@163.com
-    host: smtp.163.com
-    port: 25
-    username: 
-       from_secret: email_username
-    password: 
-       from_secret: email_password 
-    when:
-      status: [ success, failure ]
-    recipients:
-        - 1319822160@qq.com
 
 - name: build
   image: mcr.microsoft.com/dotnet/sdk:5.0
@@ -63,4 +49,33 @@ volumes:
 image_pull_secrets:
     - dockerconfigjson
 
+
+---
+kind: pipeline
+type: docker
+name: notify
+
+clone:
+  disable: true
+
+steps:
+  - name: notify
+    image: drillster/drone-email
+    settings:
+      recipients_only: true
+      recipients:
+        - 1319822160@qq.com
+      subject: "Drone build: [{{ build.status }}] {{ repo.name }} ({{ repo.branch }}) #{{ build.number }}"
+      host: smtp.163.com
+      port: 25
+      from: 15717151224@163.com
+      username:
+        from_secret: email_username
+      password:
+        from_secret: email_password
+     
+trigger:
+  status: [success, failure]
+
+depends_on: [default]
 
